@@ -1,0 +1,78 @@
+---- Minecraft Crash Report ----
+// You're mean.
+
+Time: 24.02.22 02:41
+Description: Exception ticking world
+
+java.util.ConcurrentModificationException
+	at java.util.HashMap$HashIterator.remove(Unknown Source)
+	at net.minecraft.world.gen.ChunkProviderServer.func_73156_b(ChunkProviderServer.java:262)
+	at net.minecraft.world.WorldServer.func_72835_b(WorldServer.java:207)
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:756)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:397)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at java.util.HashMap$HashIterator.remove(Unknown Source)
+	at net.minecraft.world.gen.ChunkProviderServer.func_73156_b(ChunkProviderServer.java:262)
+	at net.minecraft.world.WorldServer.func_72835_b(WorldServer.java:207)
+
+-- Affected level --
+Details:
+	Level name: world
+	All players: 0 total; []
+	Chunk stats: ServerChunkCache: 383 Drop: 112
+	Level seed: -3773939991759083831
+	Level generator: ID 06 - BIOMESOP, ver 0. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (24,64,244), Chunk: (at 8,4,4 in 1,15; contains blocks 16,0,240 to 31,255,255), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 1213060 game time, 693845 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 91724 (now: false), thunder time: 20171 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:756)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:397)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Unknown Source)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_281, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 434484720 bytes (414 MB) / 1107296256 bytes (1056 MB) up to 8589934592 bytes (8192 MB)
+	JVM Flags: 8 total; -Xms1024M -Xmx8192M -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
+	IntCache: cache: 0, tcache: 0, allocated: 11, tallocated: 96
+	FML: MCP 9.42 Powered by Forge 14.23.5.2860 10 mods loaded, 10 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID            | Version      | Source                                        | Signature                                |
+	|:------ |:------------- |:------------ |:--------------------------------------------- |:---------------------------------------- |
+	| LCHIJA | minecraft     | 1.12.2       | minecraft.jar                                 | None                                     |
+	| LCHIJA | mcp           | 9.42         | minecraft.jar                                 | None                                     |
+	| LCHIJA | FML           | 8.0.99.99    | forge-1.12.2-14.23.5.2860.jar                 | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | forge         | 14.23.5.2860 | forge-1.12.2-14.23.5.2860.jar                 | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | biomesoplenty | 7.0.1.2444   | BiomesOPlenty-1.12.2-7.0.1.2444-universal.jar | None                                     |
+	| LCHIJA | bop_patch     | 1.0          | BOP-Patch-1.0.jar                             | None                                     |
+	| LCHIJA | pixelmon      | 8.3.6        | Pixelmon-1.12.2-8.3.6-server.jar              | None                                     |
+	| LCHIJA | gameshark     | 6.0.6        | Gameshark-1.12.2-6.0.6-universal.jar          | None                                     |
+	| LCHIJA | journeymap    | 1.12.2-5.7.1 | journeymap-1.12.2-5.7.1.jar                   | None                                     |
+	| LCHIJA | pixelextras   | 2.5.17       | PixelExtras-1.12.2-2.5.17-universal.jar       | None                                     |
+
+	Loaded coremods (and transformers): 
+	Profiler Position: N/A (disabled)
+	Player Count: 0 / 20; []
+	Is Modded: Definitely; Server brand changed to 'fml,forge'
+	Type: Dedicated Server (map_server.txt)

@@ -1,0 +1,296 @@
+---- Minecraft Crash Report ----
+// You should try our sister game, Minceraft!
+
+Time: 27.02.22 22:10
+Description: Watching Server
+
+java.lang.Error: ServerHangWatchdog detected that a single server tick took 60,00 seconds (should be max 0.05)
+	at net.minecraft.world.gen.NoiseGeneratorSimplex.<init>(SourceFile:39)
+	at net.minecraft.world.gen.NoiseGeneratorPerlin.<init>(SourceFile:17)
+	at biomesoplenty.common.world.ChunkGeneratorHellBOP.<init>(ChunkGeneratorHellBOP.java:90)
+	at biomesoplenty.common.world.WorldProviderBOPHell.func_186060_c(WorldProviderBOPHell.java:26)
+	at net.minecraft.world.WorldServer.func_72970_h(WorldServer.java:848)
+	at net.minecraft.world.WorldServer.<init>(WorldServer.java:118)
+	at net.minecraft.world.WorldServerMulti.<init>(WorldServerMulti.java:18)
+	at net.minecraftforge.common.DimensionManager.initDimension(DimensionManager.java:263)
+	at net.minecraft.server.MinecraftServer.func_71218_a(MinecraftServer.java:832)
+	at net.minecraft.entity.Entity.func_184204_a(Entity.java:2543)
+	at net.minecraft.entity.Entity.func_70030_z(Entity.java:442)
+	at net.minecraft.entity.EntityLivingBase.func_70030_z(EntityLivingBase.java:226)
+	at net.minecraft.entity.EntityLiving.func_70030_z(EntityLiving.java:208)
+	at net.minecraft.entity.Entity.func_70071_h_(Entity.java:389)
+	at net.minecraft.entity.EntityLivingBase.func_70071_h_(EntityLivingBase.java:2096)
+	at net.minecraft.entity.EntityLiving.func_70071_h_(EntityLiving.java:295)
+	at com.pixelmonmod.pixelmon.entities.pixelmon.Entity1Base.func_70071_h_(Entity1Base.java:490)
+	at com.pixelmonmod.pixelmon.entities.pixelmon.Entity2Client.func_70071_h_(Entity2Client.java:438)
+	at com.pixelmonmod.pixelmon.entities.pixelmon.Entity3HasStats.func_70071_h_(Entity3HasStats.java:317)
+	at com.pixelmonmod.pixelmon.entities.pixelmon.Entity4Interactions.func_70071_h_(Entity4Interactions.java:334)
+	at com.pixelmonmod.pixelmon.entities.pixelmon.EntityPixelmon.func_70071_h_(EntityPixelmon.java:383)
+	at net.minecraft.world.World.func_72866_a(World.java:1996)
+	at net.minecraft.world.WorldServer.func_72866_a(WorldServer.java:832)
+	at net.minecraft.world.World.func_72870_g(World.java:1958)
+	at net.minecraft.world.World.func_72939_s(World.java:1762)
+	at net.minecraft.world.WorldServer.func_72939_s(WorldServer.java:613)
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:767)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:397)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server Watchdog
+Stacktrace:
+	at net.minecraft.world.gen.NoiseGeneratorSimplex.<init>(SourceFile:39)
+	at net.minecraft.world.gen.NoiseGeneratorPerlin.<init>(SourceFile:17)
+	at biomesoplenty.common.world.ChunkGeneratorHellBOP.<init>(ChunkGeneratorHellBOP.java:90)
+	at biomesoplenty.common.world.WorldProviderBOPHell.func_186060_c(WorldProviderBOPHell.java:26)
+	at net.minecraft.world.WorldServer.func_72970_h(WorldServer.java:848)
+	at net.minecraft.world.WorldServer.<init>(WorldServer.java:118)
+	at net.minecraft.world.WorldServerMulti.<init>(WorldServerMulti.java:18)
+	at net.minecraftforge.common.DimensionManager.initDimension(DimensionManager.java:263)
+	at net.minecraft.server.MinecraftServer.func_71218_a(MinecraftServer.java:832)
+	at net.minecraft.entity.Entity.func_184204_a(Entity.java:2543)
+	at net.minecraft.entity.Entity.func_70030_z(Entity.java:442)
+	at net.minecraft.entity.EntityLivingBase.func_70030_z(EntityLivingBase.java:226)
+	at net.minecraft.entity.EntityLiving.func_70030_z(EntityLiving.java:208)
+	at net.minecraft.entity.Entity.func_70071_h_(Entity.java:389)
+	at net.minecraft.entity.EntityLivingBase.func_70071_h_(EntityLivingBase.java:2096)
+	at net.minecraft.entity.EntityLiving.func_70071_h_(EntityLiving.java:295)
+	at com.pixelmonmod.pixelmon.entities.pixelmon.Entity1Base.func_70071_h_(Entity1Base.java:490)
+	at com.pixelmonmod.pixelmon.entities.pixelmon.Entity2Client.func_70071_h_(Entity2Client.java:438)
+	at com.pixelmonmod.pixelmon.entities.pixelmon.Entity3HasStats.func_70071_h_(Entity3HasStats.java:317)
+	at com.pixelmonmod.pixelmon.entities.pixelmon.Entity4Interactions.func_70071_h_(Entity4Interactions.java:334)
+	at com.pixelmonmod.pixelmon.entities.pixelmon.EntityPixelmon.func_70071_h_(EntityPixelmon.java:383)
+	at net.minecraft.world.World.func_72866_a(World.java:1996)
+	at net.minecraft.world.WorldServer.func_72866_a(WorldServer.java:832)
+	at net.minecraft.world.World.func_72870_g(World.java:1958)
+	at net.minecraft.world.World.func_72939_s(World.java:1762)
+	at net.minecraft.world.WorldServer.func_72939_s(WorldServer.java:613)
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:767)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:397)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
+
+-- Thread Dump --
+Details:
+	Threads: "Netty Server IO #4" Id=54 RUNNABLE (in native)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl.doSelect(Unknown Source)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(Unknown Source)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@3f9fbd0b
+	-  locked java.util.Collections$UnmodifiableSet@31585488
+	-  locked sun.nio.ch.WindowsSelectorImpl@3567d67b
+	at sun.nio.ch.SelectorImpl.select(Unknown Source)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:732)
+	...
+
+
+"Netty Server IO #3" Id=50 RUNNABLE (in native)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl.doSelect(Unknown Source)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(Unknown Source)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@70655eb3
+	-  locked java.util.Collections$UnmodifiableSet@3250c251
+	-  locked sun.nio.ch.WindowsSelectorImpl@415f2c87
+	at sun.nio.ch.SelectorImpl.select(Unknown Source)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:732)
+	...
+
+
+"pixelmon-world-spawner-0" Id=49 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4a80eed9
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@4a80eed9
+	at java.util.concurrent.locks.LockSupport.park(Unknown Source)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)
+	at java.util.concurrent.LinkedBlockingQueue.take(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+
+"Chunk I/O Executor Thread-1" Id=47 WAITING on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@104aa1fc
+	at sun.misc.Unsafe.park(Native Method)
+	-  waiting on java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@104aa1fc
+	at java.util.concurrent.locks.LockSupport.park(Unknown Source)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)
+	at java.util.concurrent.LinkedBlockingQueue.take(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.getTask(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+
+"threadDeathWatcher-2-1" Id=43 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at io.netty.util.ThreadDeathWatcher$Watcher.run(ThreadDeathWatcher.java:152)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+	at java.lang.Thread.run(Unknown Source)
+
+
+"Netty Server IO #2" Id=42 RUNNABLE (in native)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl.doSelect(Unknown Source)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(Unknown Source)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@24bcbbee
+	-  locked java.util.Collections$UnmodifiableSet@1cbf90ea
+	-  locked sun.nio.ch.WindowsSelectorImpl@51844382
+	at sun.nio.ch.SelectorImpl.select(Unknown Source)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:732)
+	...
+
+
+"Netty Server IO #1" Id=41 RUNNABLE (in native)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl.doSelect(Unknown Source)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(Unknown Source)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@14045d0f
+	-  locked java.util.Collections$UnmodifiableSet@55a6f7aa
+	-  locked sun.nio.ch.WindowsSelectorImpl@357e1534
+	at sun.nio.ch.SelectorImpl.select(Unknown Source)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:732)
+	...
+
+
+"File IO Thread" Id=40 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at net.minecraft.world.storage.ThreadedFileIOBase.func_75736_b(SourceFile:51)
+	at net.minecraft.world.storage.ThreadedFileIOBase.run(SourceFile:30)
+	at java.lang.Thread.run(Unknown Source)
+
+
+"Server Watchdog" Id=39 RUNNABLE
+	at sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at sun.management.ThreadImpl.dumpAllThreads(Unknown Source)
+	at net.minecraft.server.dedicated.ServerHangWatchdog.run(ServerHangWatchdog.java:45)
+	at java.lang.Thread.run(Unknown Source)
+
+
+"Netty Server IO #0" Id=38 RUNNABLE (in native)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl.doSelect(Unknown Source)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(Unknown Source)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@4615d84a
+	-  locked java.util.Collections$UnmodifiableSet@70cf09a2
+	-  locked sun.nio.ch.WindowsSelectorImpl@1236abb6
+	at sun.nio.ch.SelectorImpl.select(Unknown Source)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:732)
+	...
+
+
+"Server console handler" Id=23 RUNNABLE (in native)
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	-  locked java.io.BufferedInputStream@5724cb71
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+	at sun.nio.cs.StreamDecoder.implRead(Unknown Source)
+	at sun.nio.cs.StreamDecoder.read(Unknown Source)
+	-  locked java.io.InputStreamReader@3f9b8e57
+	at java.io.InputStreamReader.read(Unknown Source)
+	...
+
+
+"DestroyJavaVM" Id=22 RUNNABLE
+
+
+"Server thread" Id=20 RUNNABLE
+	at net.minecraft.world.gen.NoiseGeneratorSimplex.<init>(SourceFile:39)
+	at net.minecraft.world.gen.NoiseGeneratorPerlin.<init>(SourceFile:17)
+	at biomesoplenty.common.world.ChunkGeneratorHellBOP.<init>(ChunkGeneratorHellBOP.java:90)
+	at biomesoplenty.common.world.WorldProviderBOPHell.func_186060_c(WorldProviderBOPHell.java:26)
+	at net.minecraft.world.WorldServer.func_72970_h(WorldServer.java:848)
+	at net.minecraft.world.WorldServer.<init>(WorldServer.java:118)
+	at net.minecraft.world.WorldServerMulti.<init>(WorldServerMulti.java:18)
+	at net.minecraftforge.common.DimensionManager.initDimension(DimensionManager.java:263)
+	...
+
+
+"Server Infinisleeper" Id=19 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at net.minecraft.server.dedicated.DedicatedServer$1.run(DedicatedServer.java:82)
+
+
+"Snooper Timer" Id=18 TIMED_WAITING on java.util.TaskQueue@3791021f
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@3791021f
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+
+
+"Attach Listener" Id=6 RUNNABLE
+
+
+"Signal Dispatcher" Id=5 RUNNABLE
+
+
+"Finalizer" Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@105d7440
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@105d7440
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Unknown Source)
+
+
+"Reference Handler" Id=2 WAITING on java.lang.ref.Reference$Lock@61d35a79
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.Reference$Lock@61d35a79
+	at java.lang.Object.wait(Unknown Source)
+	at java.lang.ref.Reference.tryHandlePending(Unknown Source)
+	at java.lang.ref.Reference$ReferenceHandler.run(Unknown Source)
+
+
+
+Stacktrace:
+	at net.minecraft.server.dedicated.ServerHangWatchdog.run(ServerHangWatchdog.java:62)
+	at java.lang.Thread.run(Unknown Source)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_281, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 573786224 bytes (547 MB) / 1073741824 bytes (1024 MB) up to 8589934592 bytes (8192 MB)
+	JVM Flags: 8 total; -Xms1024M -Xmx8192M -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
+	IntCache: cache: 0, tcache: 0, allocated: 3, tallocated: 104
+	FML: MCP 9.42 Powered by Forge 14.23.5.2860 10 mods loaded, 10 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID            | Version      | Source                                        | Signature                                |
+	|:------ |:------------- |:------------ |:--------------------------------------------- |:---------------------------------------- |
+	| LCHIJA | minecraft     | 1.12.2       | minecraft.jar                                 | None                                     |
+	| LCHIJA | mcp           | 9.42         | minecraft.jar                                 | None                                     |
+	| LCHIJA | FML           | 8.0.99.99    | forge-1.12.2-14.23.5.2860.jar                 | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | forge         | 14.23.5.2860 | forge-1.12.2-14.23.5.2860.jar                 | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | biomesoplenty | 7.0.1.2444   | BiomesOPlenty-1.12.2-7.0.1.2444-universal.jar | None                                     |
+	| LCHIJA | bop_patch     | 1.0          | BOP-Patch-1.0.jar                             | None                                     |
+	| LCHIJA | pixelmon      | 8.3.6        | Pixelmon-1.12.2-8.3.6-server.jar              | None                                     |
+	| LCHIJA | gameshark     | 6.0.6        | Gameshark-1.12.2-6.0.6-universal.jar          | None                                     |
+	| LCHIJA | journeymap    | 1.12.2-5.7.1 | journeymap-1.12.2-5.7.1.jar                   | None                                     |
+	| LCHIJA | pixelextras   | 2.5.17       | PixelExtras-1.12.2-2.5.17-universal.jar       | None                                     |
+
+	Loaded coremods (and transformers): 
+	Profiler Position: N/A (disabled)
+	Player Count: 1 / 20; [EntityPlayerMP['crTOPPERcr'/29, l='world', x=-21,47, y=15,18, z=24,27]]
+	Is Modded: Definitely; Server brand changed to 'fml,forge'
+	Type: Dedicated Server (map_server.txt)

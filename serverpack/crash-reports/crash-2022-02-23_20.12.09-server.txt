@@ -1,0 +1,240 @@
+---- Minecraft Crash Report ----
+// There are four lights!
+
+Time: 23.02.22 20:12
+Description: Watching Server
+
+java.lang.Error: ServerHangWatchdog detected that a single server tick took 60,00 seconds (should be max 0.05)
+	at java.lang.Thread.sleep(Native Method)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:530)
+	at java.lang.Thread.run(Unknown Source)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server Watchdog
+Stacktrace:
+	at java.lang.Thread.sleep(Native Method)
+
+-- Thread Dump --
+Details:
+	Threads: "Netty Server IO #7" Id=51 RUNNABLE
+	at net.minecraft.network.NetworkManager.func_150719_a(NetworkManager.java:158)
+	at net.minecraft.network.NetworkSystem$4.initChannel(NetworkSystem.java:118)
+	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:113)
+	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:105)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:597)
+	at io.netty.channel.DefaultChannelPipeline.access$000(DefaultChannelPipeline.java:44)
+	at io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute(DefaultChannelPipeline.java:1387)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAddedForAllHandlers(DefaultChannelPipeline.java:1122)
+	...
+
+
+"Netty Server IO #6" Id=50 RUNNABLE
+	at net.minecraft.network.NetworkManager.func_150719_a(NetworkManager.java:158)
+	at net.minecraft.network.NetworkSystem$4.initChannel(NetworkSystem.java:118)
+	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:113)
+	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:105)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:597)
+	at io.netty.channel.DefaultChannelPipeline.access$000(DefaultChannelPipeline.java:44)
+	at io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute(DefaultChannelPipeline.java:1387)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAddedForAllHandlers(DefaultChannelPipeline.java:1122)
+	...
+
+
+"Netty Server IO #5" Id=49 RUNNABLE
+	at io.netty.channel.nio.AbstractNioChannel.eventLoop(AbstractNioChannel.java:49)
+	at io.netty.channel.AbstractChannelHandlerContext.executor(AbstractChannelHandlerContext.java:115)
+	at io.netty.channel.DefaultChannelPipeline.addLast(DefaultChannelPipeline.java:214)
+	-  locked io.netty.channel.DefaultChannelPipeline@acf7ce6
+	at io.netty.channel.DefaultChannelPipeline.addLast(DefaultChannelPipeline.java:192)
+	at net.minecraft.network.NetworkSystem$4.initChannel(NetworkSystem.java:117)
+	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:113)
+	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:105)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:597)
+	...
+
+
+"Netty Server IO #4" Id=48 RUNNABLE
+	at java.util.Collections$SynchronizedCollection.add(Unknown Source)
+	-  locked java.util.Collections$SynchronizedRandomAccessList@40893cf
+	at net.minecraft.network.NetworkSystem$4.initChannel(NetworkSystem.java:116)
+	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:113)
+	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:105)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:597)
+	at io.netty.channel.DefaultChannelPipeline.access$000(DefaultChannelPipeline.java:44)
+	at io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute(DefaultChannelPipeline.java:1387)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAddedForAllHandlers(DefaultChannelPipeline.java:1122)
+	...
+
+
+"Netty Server IO #3" Id=47 BLOCKED on java.util.Collections$SynchronizedRandomAccessList@40893cf owned by "Netty Server IO #4" Id=48
+	at java.util.Collections$SynchronizedCollection.add(Unknown Source)
+	-  blocked on java.util.Collections$SynchronizedRandomAccessList@40893cf
+	at net.minecraft.network.NetworkSystem$4.initChannel(NetworkSystem.java:116)
+	at io.netty.channel.ChannelInitializer.initChannel(ChannelInitializer.java:113)
+	at io.netty.channel.ChannelInitializer.handlerAdded(ChannelInitializer.java:105)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAdded0(DefaultChannelPipeline.java:597)
+	at io.netty.channel.DefaultChannelPipeline.access$000(DefaultChannelPipeline.java:44)
+	at io.netty.channel.DefaultChannelPipeline$PendingHandlerAddedTask.execute(DefaultChannelPipeline.java:1387)
+	at io.netty.channel.DefaultChannelPipeline.callHandlerAddedForAllHandlers(DefaultChannelPipeline.java:1122)
+	...
+
+
+"Netty Server IO #2" Id=43 RUNNABLE
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:776)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:768)
+	at io.netty.channel.AbstractChannelHandlerContext.access$1500(AbstractChannelHandlerContext.java:38)
+	at io.netty.channel.AbstractChannelHandlerContext$16.run(AbstractChannelHandlerContext.java:756)
+	at io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:163)
+	at io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:403)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:442)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$5.run(SingleThreadEventExecutor.java:858)
+	...
+
+
+"threadDeathWatcher-2-1" Id=42 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at io.netty.util.ThreadDeathWatcher$Watcher.run(ThreadDeathWatcher.java:152)
+	at io.netty.util.concurrent.DefaultThreadFactory$DefaultRunnableDecorator.run(DefaultThreadFactory.java:144)
+	at java.lang.Thread.run(Unknown Source)
+
+
+"Netty Server IO #1" Id=41 RUNNABLE (in native)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl.doSelect(Unknown Source)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(Unknown Source)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@371796
+	-  locked java.util.Collections$UnmodifiableSet@453599f4
+	-  locked sun.nio.ch.WindowsSelectorImpl@34ecf5f8
+	at sun.nio.ch.SelectorImpl.select(Unknown Source)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:732)
+	...
+
+
+"File IO Thread" Id=40 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at net.minecraft.world.storage.ThreadedFileIOBase.func_75736_b(SourceFile:51)
+	at net.minecraft.world.storage.ThreadedFileIOBase.run(SourceFile:30)
+	at java.lang.Thread.run(Unknown Source)
+
+
+"Server Watchdog" Id=39 RUNNABLE
+	at sun.management.ThreadImpl.dumpThreads0(Native Method)
+	at sun.management.ThreadImpl.dumpAllThreads(Unknown Source)
+	at net.minecraft.server.dedicated.ServerHangWatchdog.run(ServerHangWatchdog.java:45)
+	at java.lang.Thread.run(Unknown Source)
+
+
+"Netty Server IO #0" Id=38 RUNNABLE (in native)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll0(Native Method)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.poll(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl$SubSelector.access$400(Unknown Source)
+	at sun.nio.ch.WindowsSelectorImpl.doSelect(Unknown Source)
+	at sun.nio.ch.SelectorImpl.lockAndDoSelect(Unknown Source)
+	-  locked io.netty.channel.nio.SelectedSelectionKeySet@743a9e41
+	-  locked java.util.Collections$UnmodifiableSet@4c09acf7
+	-  locked sun.nio.ch.WindowsSelectorImpl@251a66bb
+	at sun.nio.ch.SelectorImpl.select(Unknown Source)
+	at io.netty.channel.nio.SelectedSelectionKeySetSelector.select(SelectedSelectionKeySetSelector.java:62)
+	at io.netty.channel.nio.NioEventLoop.select(NioEventLoop.java:732)
+	...
+
+
+"Server console handler" Id=23 RUNNABLE (in native)
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	-  locked java.io.BufferedInputStream@768a04d5
+	at sun.nio.cs.StreamDecoder.readBytes(Unknown Source)
+	at sun.nio.cs.StreamDecoder.implRead(Unknown Source)
+	at sun.nio.cs.StreamDecoder.read(Unknown Source)
+	-  locked java.io.InputStreamReader@566254d3
+	at java.io.InputStreamReader.read(Unknown Source)
+	...
+
+
+"DestroyJavaVM" Id=22 RUNNABLE
+
+
+"Server thread" Id=20 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:530)
+	at java.lang.Thread.run(Unknown Source)
+
+
+"Server Infinisleeper" Id=19 TIMED_WAITING
+	at java.lang.Thread.sleep(Native Method)
+	at net.minecraft.server.dedicated.DedicatedServer$1.run(DedicatedServer.java:82)
+
+
+"Snooper Timer" Id=18 TIMED_WAITING on java.util.TaskQueue@570d24fc
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.util.TaskQueue@570d24fc
+	at java.util.TimerThread.mainLoop(Unknown Source)
+	at java.util.TimerThread.run(Unknown Source)
+
+
+"Attach Listener" Id=6 RUNNABLE
+
+
+"Signal Dispatcher" Id=5 RUNNABLE
+
+
+"Finalizer" Id=3 WAITING on java.lang.ref.ReferenceQueue$Lock@2154bf18
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.ReferenceQueue$Lock@2154bf18
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at java.lang.ref.Finalizer$FinalizerThread.run(Unknown Source)
+
+
+"Reference Handler" Id=2 WAITING on java.lang.ref.Reference$Lock@7debb4b
+	at java.lang.Object.wait(Native Method)
+	-  waiting on java.lang.ref.Reference$Lock@7debb4b
+	at java.lang.Object.wait(Unknown Source)
+	at java.lang.ref.Reference.tryHandlePending(Unknown Source)
+	at java.lang.ref.Reference$ReferenceHandler.run(Unknown Source)
+
+
+
+Stacktrace:
+	at net.minecraft.server.dedicated.ServerHangWatchdog.run(ServerHangWatchdog.java:62)
+	at java.lang.Thread.run(Unknown Source)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 1.8.0_281, Oracle Corporation
+	Java VM Version: Java HotSpot(TM) 64-Bit Server VM (mixed mode), Oracle Corporation
+	Memory: 495093616 bytes (472 MB) / 1073741824 bytes (1024 MB) up to 8589934592 bytes (8192 MB)
+	JVM Flags: 8 total; -Xms1024M -Xmx8192M -XX:+UseG1GC -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:G1ReservePercent=20 -XX:MaxGCPauseMillis=50 -XX:G1HeapRegionSize=32M
+	IntCache: cache: 0, tcache: 0, allocated: 3, tallocated: 104
+	FML: MCP 9.42 Powered by Forge 14.23.5.2860 10 mods loaded, 10 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID            | Version      | Source                                        | Signature                                |
+	|:------ |:------------- |:------------ |:--------------------------------------------- |:---------------------------------------- |
+	| LCHIJA | minecraft     | 1.12.2       | minecraft.jar                                 | None                                     |
+	| LCHIJA | mcp           | 9.42         | minecraft.jar                                 | None                                     |
+	| LCHIJA | FML           | 8.0.99.99    | forge-1.12.2-14.23.5.2860.jar                 | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | forge         | 14.23.5.2860 | forge-1.12.2-14.23.5.2860.jar                 | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | biomesoplenty | 7.0.1.2444   | BiomesOPlenty-1.12.2-7.0.1.2444-universal.jar | None                                     |
+	| LCHIJA | bop_patch     | 1.0          | BOP-Patch-1.0.jar                             | None                                     |
+	| LCHIJA | pixelmon      | 8.3.6        | Pixelmon-1.12.2-8.3.6-server.jar              | None                                     |
+	| LCHIJA | gameshark     | 6.0.6        | Gameshark-1.12.2-6.0.6-universal.jar          | None                                     |
+	| LCHIJA | journeymap    | 1.12.2-5.7.1 | journeymap-1.12.2-5.7.1.jar                   | None                                     |
+	| LCHIJA | pixelextras   | 2.5.17       | PixelExtras-1.12.2-2.5.17-universal.jar       | None                                     |
+
+	Loaded coremods (and transformers): 
+	Profiler Position: N/A (disabled)
+	Player Count: 0 / 20; []
+	Is Modded: Definitely; Server brand changed to 'fml,forge'
+	Type: Dedicated Server (map_server.txt)
